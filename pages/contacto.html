@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    
+    <!--fuentes-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
+    <!--iconos-->
+    <script src="https://kit.fontawesome.com/d2b0874d59.js" crossorigin="anonymous"></script>
+    <title>Contacto</title>
+</head>
+<body>
+    <header>
+        <div class="header__titulo">
+            <h1>CONTACTO</h1>
+        </div>
+        <nav class="nav__container">
+            <ul class="nav">
+                <li class="nav__element"> <i class="fa-solid fa-house"></i> <a href="../index.html">Inicio</a></li>
+                <li class="nav__element"> <i class="fa-solid fa-book"></i> <a href="./historia.html">Historia</a></li>
+                <li class="nav__element"> <i class="fa-solid fa-map-pin"></i> <a href="./lugares.html">Lugares</a></li>
+                <li class="nav__element"> <i class="fa-solid fa-camera-retro"></i> <a href="./fotos.html">Fotos</a></li>
+                <li class="nav__element"> <i class="fa-solid fa-file-signature"></i> <a href="./contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="contacto__info">
+        <h2>Si te interesa conocer chascomús o queres obtener más información, dejanos tus datos
+        para poder contactarte y brindarte la información necesaria.
+        </h2>
+    </section>
+    <section class="contacto__container">
+        <form action="" class="contacto__form">
+            <label for="name">Nombre:</label>
+            <input class="contacto__controls" type="text" name="name" id="name" placeholder="Ingrese su nombre">
+            <label for="surname">Apellido: 
+            <input class="contacto__controls" type="text" name="lastname" id="lastname" placeholder="Ingrese su apellido">
+            <label for="genero">Genero:</label>
+            <select name="" id="genero">
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+            </select>
+            <p>¿Ya conoces chascomús? </p>
+            <div class="contacto__control__radio">
+                <input class="contacto__controls radio__controls" type="radio" name="lado" value="Si"><label for="lado">Si</label>
+                <input class="contacto__controls radio__controls" type="radio" name="lado" value="No"><label for="lado">No</label>
+            </div>
+            <label for="email">Email:</label>
+            <input class="contacto__controls" type="email" name="email" id="email" placeholder="ejemplomail@ejemplo.com"><br>
+            <input class="contacto__botons" type="submit" value="Enviar">
+            <input class="contacto__botons" type="reset" value="Resetear">
+        </form>
+    </section>
+    <footer class="footer__container">
+        <div class="grupo__1">
+            <div class="footer__img">
+                <img src="../img/logo-chas.png" alt="logo-chascomus">
+            </div>
+            <div class="box">
+                <p>Chascomús, tu Lugar.</p>
+            </div>
+        </div>
+        <div class="grupo__2">&copy; 2021 - Joaquin Cavenaghi - Todos los Derechos Reservados.</div>
+        <div></div>
+    </footer>
+</body>
+</html>

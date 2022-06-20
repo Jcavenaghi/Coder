@@ -1,0 +1,1 @@
+Hacer que cada contenedor ocupe un determinado espacio en HISTORIA. Y hacerla responsive
