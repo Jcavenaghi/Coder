@@ -105,53 +105,29 @@ body {
     margin-bottom: 15px;
 }
 
-    /*hacemos los iframe responsive, para que se ajuste al tamaño
-    de la pantalla que estamos usando. (Sirve para otros iframe tambien) */
-
-.container__iframe {
-    text-align: center;
-}
-        
-.container__iframe iframe{
-    width: "400";
-    height: "350";
-}
-    /* CSS pantallas de 320px o superior */
-@media (min-width: 320px) {
-
-    .container__iframe iframe {
-      width: 300px;
-      height: 200px;
-    } 
-  
-  }
-  
-    /* CSS pantalla 768px o superior */
-@media (min-width: 768px) {
-  
-    .container__iframe iframe {
-      width: 500px;
-      height: 350px;
-    }
-}
-
     /*Footer CSS. Para todos los .html se usa este CSS*/
 
 .footer__container {
     background-color:#368D96;
-    display: flex;
+    width: 100%;
     border: 3px  solid black;
     height: auto;
 }
 
 .footer__container .grupo__1 {
-    display:flex;
-    justify-content:space-between;
-    align-items: center;
     width: 100%;
+    margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
 }
-
 .footer__img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 12px;
     
 }
@@ -163,11 +139,41 @@ body {
     border-radius: 20%;
 }
 
+.footer__container .grupo__1 .box h2 {
+    color: #fff;
+    margin-bottom: 25px;
+    text-align: center;
+    
+}
+
+.footer__container .grupo__1 .box p {
+    color: #efefef;
+    margin-top: 50%;
+    text-align: center;
+    
+}
+.footer__container .grupo__1 .red__social {
+    text-align: center;
+}
+.footer__container .grupo__1 .red__social a {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #54dfcc;
+    text-align: center;
+}
+
+
 .footer__container .grupo__2 {
-    display:flex;
-    justify-content:flex-end;
-    align-items: center;
-    width: 100%;
+    background-color: #54dfcc;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+
 }
 
 
@@ -184,17 +190,6 @@ body {
     text-align: justify;
 }
 
-
-    /* CSS cotenido de 450px o menor. Con esta configuración
-    cuando la pantalla de un dispositivo es menor a 450, el contenido
-    se apila (column). Es responsive */
-    @media (max-width: 450px) {
-
-        .section__contenido {
-          flex-direction: column;
-        } 
-      
-      }
 
 .section__contenido article {
     max-width: 100%;
@@ -232,7 +227,7 @@ button, input, select, textarea {
     max-width: 100%;
     height: auto;
     padding: 0;
-    margin: 0;
+    margin: 20px;
    
 }
 
@@ -287,10 +282,6 @@ button, input, select, textarea {
     /*CSS exclusivo para las clases de
     lugares.html*/
 
-    /*A futuro, se utilizara flex/grid para
-    hacer la galeria más prolija, responsive
-    y basada en figma*/
-
 .lugares__info {
     text-align: center;
 }
@@ -300,24 +291,31 @@ button, input, select, textarea {
     font-family: 'rubik', sans-serif;
 }
 
-    /* Las siguientes estilos (desde lugares__img
-    hasta el ultimo media), se utilizan para darle 
+    /* Las siguientes estilos, se utilizan para darle 
     estilo a lugares.html y también para fotos.html*/
 
-.lugares__img {
-    display: flex;
-    padding: 5px;
-    flex-wrap: wrap;
+.lugares__grid {  
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px 12px;
+    grid-auto-rows: minmax(100px, 350px);
+    padding: 12px;
 }
 
-.lugares__img__column {
-    flex:25%;
-    padding: 5px;
-    margin-top: 5px;
-    
-}
+.lugares__img img{
+    width: 100%;
+    height: auto;
+  }
+  @supports(object-fit: cover){
+      .lugares__img img{
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+      }
+  }
 
-.lugares__img__column img {
+
+.lugares__img img {
     width: 100%;
     margin-top: 5px;
     opacity: 0.5;
@@ -325,23 +323,11 @@ button, input, select, textarea {
    
 }
 
-.lugares__img__column img:hover {
+.lugares__img img:hover {
     opacity: 1;
    
 }
 
-
-@media (max-width: 800px) {
-    .lugares__img__column {
-        flex: 50%;
-    }
-}
-
-@media (max-width: 600px) {
-    .lugares__img__column {
-        flex: 100%;
-    }
-}
 
     /*CSS exclusivo para las clases de
     fotos.html*/
@@ -354,4 +340,140 @@ button, input, select, textarea {
 .fotos__info h2 {
     padding: 10px;
     font-family: 'rubik', sans-serif;
+}
+
+
+/*Seccion @media querys*/
+
+    /*Nav resposive*/
+
+@media (max-width: 858px) {
+    .nav {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        line-height: 45px;
+    }
+}
+
+
+    /*hacemos los iframe responsive, para que se ajuste al tamaño
+    de la pantalla que estamos usando. (Sirve para otros iframe tambien) */
+
+
+.container__iframe {
+    text-align: center;
+}
+            
+.container__iframe iframe{
+    width: "400";
+    height: "350";
+}
+
+    /* CSS pantallas de 280px o menor */
+    @media (max-width: 280px) {
+    
+        .container__iframe iframe {
+            width: 200px;
+            height: 150px;
+        } 
+          
+    }
+
+
+    /* CSS pantallas de 320px o superior */
+@media (min-width: 320px) {
+    
+    .container__iframe iframe {
+        width: 300px;
+        height: 200px;
+    } 
+      
+}
+      
+    /* CSS pantalla 768px o superior */
+@media (min-width: 768px) {
+      
+    .container__iframe iframe {
+        width: 500px;
+        height: 350px;
+    }
+
+}
+
+    /* CSS cotenido de 450px o menor. Con esta configuración
+    cuando la pantalla de un dispositivo es menor a 450, el contenido
+    se apila (column). Es responsive */
+@media (max-width: 1024px) {
+
+    .section__contenido {
+        flex-direction: column;
+    } 
+ 
+    
+}
+
+    /*Media querys de lugares, para hacer los mismos responsive*/
+
+@media(max-width:1500px) {
+    .lugares__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width:1024px) {
+    .lugares__grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(100px, 250px);
+    }
+}
+
+@media(max-width:850px) {
+    .lugares__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .lugares__info {
+        font-size: 12px;
+    }
+}
+
+@media(max-width:600px) {
+    .lugares__grid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-rows: minmax(100px, 350px);
+    }
+}
+
+    /*Media query para cambiar el tamañaño de el subtitulo de
+    la seccion contacto */
+
+@media(max-width:785px) {
+    .contacto__info {
+        font-size: 12px;
+    }
+}
+
+    /*Media del footer*/
+
+@media screen and (max-width: 800px) {
+    .footer__container .grupo__1 {
+        width: 100%;
+        
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+}
+
+ @media screen and (min-width: 1630px) {
+    .footer__container {
+        margin-top: auto;
+        
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
 }
