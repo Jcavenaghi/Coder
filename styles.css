@@ -224,6 +224,7 @@ button, input, select, textarea {
 .contacto__container {
     display: flex;
     justify-content: center;
+    align-content: center;
     max-width: 100%;
     height: auto;
     padding: 0;
@@ -317,15 +318,35 @@ button, input, select, textarea {
 
 .lugares__img img {
     width: 100%;
-    margin-top: 5px;
-    opacity: 0.5;
-    transition: all 0.5s ease-in-out;
-   
-}
-
-.lugares__img img:hover {
     opacity: 1;
    
+}
+.lugares__img {
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+
+.lugares__img:hover .descripcion__foto {
+    display: block;
+}
+.descripcion__foto {
+    display: none;
+    background:rgba(0,0,0,.7);
+    position: absolute;
+    padding: 5px;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    text-align: center;
+    color: white;
+}
+.descripcion__foto p {
+    font-size: 15px;
+}
+.descripcion__foto h3 {
+    margin-bottom: 50px;
+    font-size: 25px;
 }
 
 
